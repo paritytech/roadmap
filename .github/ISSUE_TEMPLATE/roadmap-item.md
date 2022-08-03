@@ -1,7 +1,7 @@
 ---
 name: Roadmap Item
 about: This is standard Parity Roadmap item description
-title: Feature TItle
+title: Feature Title
 labels: ''
 assignees: ''
 
@@ -29,4 +29,4 @@ _If you want to help us out and contribute to this issue, in this section you ca
 ---
 
 Here you can find the board with specific sub-tasks to this milestone:
-<Link to your project's view>
+\<Link to your project's view>
