@@ -33,7 +33,7 @@ _If you want to help us out and contribute to this issue, in this section you ca
 
 ✄ ---------------------------------------------------------------------------
 
-**Remove this section and replace the \<text> with your own description**
+**Remove this section**
 
 3. If you don't have so far, create your own project where related sub-tasks will be assigned to it. 
 4. Create in your project a new field called "Milestone in Parity Roadmap".
