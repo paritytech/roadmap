@@ -18,7 +18,7 @@ assignees: ''
 
 # The Vision
 
-\<Describe here what this milestone is about and what the bigger picture is. 
+\<Describe here what this milestone is about and what the bigger picture is. Give a bit of background information where this comes from.
 Describe why this milestone is relevant and what goals it accomplishes.>
 
 
