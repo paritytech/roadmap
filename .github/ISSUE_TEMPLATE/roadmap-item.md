@@ -18,7 +18,9 @@ assignees: ''
 
 # The Vision
 
-\<Describe here what this milestone is about and where the journey should go>
+\<Describe here what this milestone is about and what the bigger picture is. 
+Describe why this milestone is relevant and what goals it accomplishes.>
+
 
 
 # The Plan
