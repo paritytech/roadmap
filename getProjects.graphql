@@ -1,0 +1,91 @@
+query getProjects($org: String!, $projectId: Int!, $first: Int!, $after: String) {
+    organization(login: $org) {
+        projectsUrl
+        projectsResourcePath
+        name
+        projectV2(number: $projectId) {
+            items(first: $first, after: $after) {
+                totalCount
+                pageInfo {
+                    endCursor
+                    hasNextPage
+                    hasPreviousPage
+                    startCursor
+                }
+                edges {
+                    cursor
+                    node {
+                        id
+                        fieldValues(first: 20) {
+                            edges {
+                                cursor
+                                node {
+                                    __typename
+                                    ... on ProjectV2ItemFieldLabelValue {
+                                        field {
+                                            __typename
+                                            ... on ProjectV2FieldCommon {
+                                                name
+                                            }
+                                        }
+                                        labels(first:10) {
+                                            nodes {
+                                                __typename
+                                                name
+                                                color
+                                                url
+                                            }
+                                        }
+                                    }
+
+                                    ... on ProjectV2ItemFieldSingleSelectValue {
+                                        field {
+                                            __typename
+                                            ... on ProjectV2SingleSelectField {
+                                                __typename
+                                                name
+                                            }
+                                        }
+                                        name
+                                    }
+
+                                    ... on ProjectV2ItemFieldNumberValue {
+                                        field {
+                                            __typename
+                                            ... on  ProjectV2Field {
+                                                __typename
+                                                name
+                                            }
+                                        }
+                                        number
+                                    }
+                                }
+                            }
+                        }
+                        content {
+                            __typename
+                            ... on Issue {
+                                body
+                                title
+                                bodyHTML
+                                bodyUrl
+                                bodyText
+                                author {
+                                    avatarUrl
+                                    login
+                                    url
+                                }
+                                state
+                                stateReason
+                                closed
+                                closedAt
+                                updatedAt
+                                publishedAt
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
