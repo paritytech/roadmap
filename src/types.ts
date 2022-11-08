@@ -7,9 +7,15 @@ export type ProjectDetails = {
   items: ProjectItem[]
 }
 
-type ProjectCustomFields = {
+export type ProjectCustomFields = {
   [k: string]: any
 }
+
+export type ProjectItemLabels = {
+  name: string,
+  url: string,
+  color: string
+}[] | undefined
 
 export type ProjectItem = {
   id: string
@@ -26,7 +32,7 @@ export type ProjectItem = {
     updatedAt: any,
     publishedAt?: any | null,
     author?: { avatarUrl: any, login: string, url: any } | null
-    labels?: { name: string, url: string, color: string }[] | undefined
+    labels?: ProjectItemLabels
     customFields: ProjectCustomFields
   }
 }

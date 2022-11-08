@@ -1,5 +1,10 @@
-import { GetProjectsDocument, GetProjectsQuery, GetProjectsQueryVariables } from "./generated/graphql-operations";
-import { ProjectDetails, ProjectItem } from "./types";
+import {
+  GetProjectsDocument,
+  GetProjectsQuery,
+  GetProjectsQueryVariables, Label,
+  LabelConnection
+} from "./generated/graphql-operations";
+import {ProjectDetails, ProjectItem, ProjectItemLabels} from "./types";
 import { print } from "graphql/index";
 import { octokit } from "./octokit";
 
@@ -20,51 +25,47 @@ export async function fetchProjectItems(
     project.organization?.projectV2?.items?.edges
       ?.map(item => item?.node)
       ?.map(item => {
-        if (item) {
-          if (item.content && Object.keys(item.content).length > 0 && item.content.__typename === "Issue") {
-            let projectItem: ProjectItem = {
-              id: item.id,
-              content: {
-                ...item.content,
-                customFields: {}
-              },
-            }
-
-            if (item.fieldValues) {
-              item.fieldValues.edges
-                ?.map(fv => {
-                  if (!fv?.node) return;
-
-                  switch(fv.node.__typename) {
-                    case "ProjectV2ItemFieldLabelValue":
-                      projectItem.content.labels = fv.node.labels?.nodes
-                        ?.filter(label => !!label)
-                        ?.map(label => {
-                          return {
-                            name: label!.name,
-                            url: label!.url,
-                            color: label!.color,
-                          }
-                        })
-                      break;
-                    case "ProjectV2ItemFieldSingleSelectValue":
-                      if (fv.node?.field.__typename === "ProjectV2SingleSelectField") {
-                        projectItem.content.customFields[fv.node.field.name] = fv.node.name
-                      }
-                      break
-                    case "ProjectV2ItemFieldNumberValue":
-                      if (fv.node?.field.__typename === "ProjectV2Field") {
-                        projectItem.content.customFields[fv.node.field.name] = fv.node.number
-                      }
-                      break
-                  }
-                })
-            }
-
-            items.push(projectItem)
+        if (item && item.content && Object.keys(item.content).length > 0 && item.content.__typename === "Issue") {
+          let projectItem: ProjectItem = {
+            id: item.id,
+            content: {
+              ...item.content,
+              customFields: {}
+            },
           }
 
+          if (item.fieldValues) {
+            // FieldValues include
+            // - Custom fields of ProjectV2
+            // - Issue fields (like labels, milestones etc)
+            // Here we extract Labels and all Custom Fields into projectItem
+            item.fieldValues.edges?.map(fv => {
+              if (!fv?.node) return;
 
+              // Depends on __typename the node might have different keys,
+              // that's why we need to check the type explicitly
+              switch(fv.node.__typename) {
+                case "ProjectV2ItemFieldLabelValue":
+                  // Extract ProjectItemLabels
+                  projectItem.content.labels = getItemLabels(fv.node.labels?.nodes)
+                  break;
+                case "ProjectV2ItemFieldSingleSelectValue":
+                  // Extract all Single Select type of Custom fields
+                  if (fv.node?.field.__typename === "ProjectV2SingleSelectField") {
+                    projectItem.content.customFields[fv.node.field.name] = fv.node.name
+                  }
+                  break
+                case "ProjectV2ItemFieldNumberValue":
+                  // Extract all Number type of Custom fields
+                  if (fv.node?.field.__typename === "ProjectV2Field") {
+                    projectItem.content.customFields[fv.node.field.name] = fv.node.number
+                  }
+                  break
+              }
+            })
+          }
+
+          items.push(projectItem)
         }
       })
 
@@ -93,4 +94,21 @@ export async function fetchProjectItems(
 async function fetchProject(params: GetProjectsQueryVariables) {
   return await octokit.graphql<GetProjectsQuery>(print(GetProjectsDocument), params)
     .catch(console.error)
+}
+
+function getItemLabels(labels: ({
+  __typename: "Label";
+  name: string;
+  color: string;
+  url: any;
+} | null)[] | null | undefined): ProjectItemLabels {
+  return labels
+    ?.filter(label => !!label)
+    ?.map(label => {
+      return {
+        name: label!.name,
+        url: label!.url,
+        color: label!.color,
+      }
+    })
 }
