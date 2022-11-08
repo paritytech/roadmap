@@ -2,7 +2,6 @@ import {
   GetProjectsDocument,
   GetProjectsQuery,
   GetProjectsQueryVariables, Label,
-  LabelConnection
 } from "./generated/graphql-operations";
 import {ProjectDetails, ProjectItem, ProjectItemLabels} from "./types";
 import { print } from "graphql/index";
@@ -14,7 +13,10 @@ export async function fetchProjectItems(
 ): Promise<ProjectDetails> {
   console.log(`Fetching projects`, params)
   // @ts-ignore
-  const project: GetProjectsQuery = await fetchProject(params).catch(console.error)
+  const project: GetProjectsQuery = await fetchProject(params).catch((e) => {
+    console.error(e)
+    process.exit(1)
+  })
 
   console.log(project)
 
@@ -23,7 +25,7 @@ export async function fetchProjectItems(
     const items: ProjectItem[] = [];
 
     project.organization?.projectV2?.items?.edges
-      ?.map(item => item?.node)
+      ?.map(itemEdge => itemEdge?.node)
       ?.map(item => {
         if (item && item.content && Object.keys(item.content).length > 0 && item.content.__typename === "Issue") {
           let projectItem: ProjectItem = {
@@ -93,7 +95,10 @@ export async function fetchProjectItems(
 
 async function fetchProject(params: GetProjectsQueryVariables) {
   return await octokit.graphql<GetProjectsQuery>(print(GetProjectsDocument), params)
-    .catch(console.error)
+    .catch(e => {
+      console.error(e)
+      process.exit(1)
+    })
 }
 
 function getItemLabels(labels: ({

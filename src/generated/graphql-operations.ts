@@ -1,5 +1,4 @@
-import {TypedDocumentNode as DocumentNode} from '@graphql-typed-document-node/core';
-
+import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -2398,16 +2397,7 @@ export type CommitAuthor = {
 };
 
 /** Represents a comment on a given Commit. */
-export type CommitComment =
-  Comment
-  & Deletable
-  & Minimizable
-  & Node
-  & Reactable
-  & RepositoryNode
-  & Updatable
-  & UpdatableComment
-  & {
+export type CommitComment = Comment & Deletable & Minimizable & Node & Reactable & RepositoryNode & Updatable & UpdatableComment & {
   __typename?: 'CommitComment';
   /** The actor who authored the comment. */
   author?: Maybe<Actor>;
@@ -5145,18 +5135,7 @@ export type DisconnectedEvent = Node & {
 };
 
 /** A discussion in a repository. */
-export type Discussion =
-  Comment
-  & Deletable
-  & Labelable
-  & Lockable
-  & Node
-  & Reactable
-  & RepositoryNode
-  & Subscribable
-  & Updatable
-  & Votable
-  & {
+export type Discussion = Comment & Deletable & Labelable & Lockable & Node & Reactable & RepositoryNode & Subscribable & Updatable & Votable & {
   __typename?: 'Discussion';
   /** Reason that the conversation was locked. */
   activeLockReason?: Maybe<LockReason>;
@@ -5325,16 +5304,7 @@ export type DiscussionCategoryEdge = {
 };
 
 /** A comment on a discussion. */
-export type DiscussionComment =
-  Comment
-  & Deletable
-  & Minimizable
-  & Node
-  & Reactable
-  & Updatable
-  & UpdatableComment
-  & Votable
-  & {
+export type DiscussionComment = Comment & Deletable & Minimizable & Node & Reactable & Updatable & UpdatableComment & Votable & {
   __typename?: 'DiscussionComment';
   /** The actor who authored the comment. */
   author?: Maybe<Actor>;
@@ -7942,22 +7912,7 @@ export enum IpAllowListForInstalledAppsEnabledSettingValue {
 export type IpAllowListOwner = App | Enterprise | Organization;
 
 /** An Issue is a place to discuss ideas, enhancements, tasks, and bugs for a project. */
-export type Issue =
-  Assignable
-  & Closable
-  & Comment
-  & Labelable
-  & Lockable
-  & Node
-  & ProjectNextOwner
-  & ProjectV2Owner
-  & Reactable
-  & RepositoryNode
-  & Subscribable
-  & UniformResourceLocatable
-  & Updatable
-  & UpdatableComment
-  & {
+export type Issue = Assignable & Closable & Comment & Labelable & Lockable & Node & ProjectNextOwner & ProjectV2Owner & Reactable & RepositoryNode & Subscribable & UniformResourceLocatable & Updatable & UpdatableComment & {
   __typename?: 'Issue';
   /** Reason that the conversation was locked. */
   activeLockReason?: Maybe<LockReason>;
@@ -8277,16 +8232,7 @@ export enum IssueClosedStateReason {
 }
 
 /** Represents a comment on an Issue. */
-export type IssueComment =
-  Comment
-  & Deletable
-  & Minimizable
-  & Node
-  & Reactable
-  & RepositoryNode
-  & Updatable
-  & UpdatableComment
-  & {
+export type IssueComment = Comment & Deletable & Minimizable & Node & Reactable & RepositoryNode & Updatable & UpdatableComment & {
   __typename?: 'IssueComment';
   /** The actor who authored the comment. */
   author?: Maybe<Actor>;
@@ -8554,26 +8500,7 @@ export type IssueTimelineConnection = {
 };
 
 /** An item in an issue timeline */
-export type IssueTimelineItem =
-  AssignedEvent
-  | ClosedEvent
-  | Commit
-  | CrossReferencedEvent
-  | DemilestonedEvent
-  | IssueComment
-  | LabeledEvent
-  | LockedEvent
-  | MilestonedEvent
-  | ReferencedEvent
-  | RenamedTitleEvent
-  | ReopenedEvent
-  | SubscribedEvent
-  | TransferredEvent
-  | UnassignedEvent
-  | UnlabeledEvent
-  | UnlockedEvent
-  | UnsubscribedEvent
-  | UserBlockedEvent;
+export type IssueTimelineItem = AssignedEvent | ClosedEvent | Commit | CrossReferencedEvent | DemilestonedEvent | IssueComment | LabeledEvent | LockedEvent | MilestonedEvent | ReferencedEvent | RenamedTitleEvent | ReopenedEvent | SubscribedEvent | TransferredEvent | UnassignedEvent | UnlabeledEvent | UnlockedEvent | UnsubscribedEvent | UserBlockedEvent;
 
 /** An edge in a connection. */
 export type IssueTimelineItemEdge = {
@@ -8585,38 +8512,7 @@ export type IssueTimelineItemEdge = {
 };
 
 /** An item in an issue timeline */
-export type IssueTimelineItems =
-  AddedToProjectEvent
-  | AssignedEvent
-  | ClosedEvent
-  | CommentDeletedEvent
-  | ConnectedEvent
-  | ConvertedNoteToIssueEvent
-  | ConvertedToDiscussionEvent
-  | CrossReferencedEvent
-  | DemilestonedEvent
-  | DisconnectedEvent
-  | IssueComment
-  | LabeledEvent
-  | LockedEvent
-  | MarkedAsDuplicateEvent
-  | MentionedEvent
-  | MilestonedEvent
-  | MovedColumnsInProjectEvent
-  | PinnedEvent
-  | ReferencedEvent
-  | RemovedFromProjectEvent
-  | RenamedTitleEvent
-  | ReopenedEvent
-  | SubscribedEvent
-  | TransferredEvent
-  | UnassignedEvent
-  | UnlabeledEvent
-  | UnlockedEvent
-  | UnmarkedAsDuplicateEvent
-  | UnpinnedEvent
-  | UnsubscribedEvent
-  | UserBlockedEvent;
+export type IssueTimelineItems = AddedToProjectEvent | AssignedEvent | ClosedEvent | CommentDeletedEvent | ConnectedEvent | ConvertedNoteToIssueEvent | ConvertedToDiscussionEvent | CrossReferencedEvent | DemilestonedEvent | DisconnectedEvent | IssueComment | LabeledEvent | LockedEvent | MarkedAsDuplicateEvent | MentionedEvent | MilestonedEvent | MovedColumnsInProjectEvent | PinnedEvent | ReferencedEvent | RemovedFromProjectEvent | RenamedTitleEvent | ReopenedEvent | SubscribedEvent | TransferredEvent | UnassignedEvent | UnlabeledEvent | UnlockedEvent | UnmarkedAsDuplicateEvent | UnpinnedEvent | UnsubscribedEvent | UserBlockedEvent;
 
 /** The connection type for IssueTimelineItems. */
 export type IssueTimelineItemsConnection = {
@@ -9375,12 +9271,7 @@ export type MemberStatusableMemberStatusesArgs = {
 };
 
 /** Audit log entry for a members_can_delete_repos.clear event. */
-export type MembersCanDeleteReposClearAuditEntry =
-  AuditEntry
-  & EnterpriseAuditEntryData
-  & Node
-  & OrganizationAuditEntryData
-  & {
+export type MembersCanDeleteReposClearAuditEntry = AuditEntry & EnterpriseAuditEntryData & Node & OrganizationAuditEntryData & {
   __typename?: 'MembersCanDeleteReposClearAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -9426,12 +9317,7 @@ export type MembersCanDeleteReposClearAuditEntry =
 };
 
 /** Audit log entry for a members_can_delete_repos.disable event. */
-export type MembersCanDeleteReposDisableAuditEntry =
-  AuditEntry
-  & EnterpriseAuditEntryData
-  & Node
-  & OrganizationAuditEntryData
-  & {
+export type MembersCanDeleteReposDisableAuditEntry = AuditEntry & EnterpriseAuditEntryData & Node & OrganizationAuditEntryData & {
   __typename?: 'MembersCanDeleteReposDisableAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -9477,12 +9363,7 @@ export type MembersCanDeleteReposDisableAuditEntry =
 };
 
 /** Audit log entry for a members_can_delete_repos.enable event. */
-export type MembersCanDeleteReposEnableAuditEntry =
-  AuditEntry
-  & EnterpriseAuditEntryData
-  & Node
-  & OrganizationAuditEntryData
-  & {
+export type MembersCanDeleteReposEnableAuditEntry = AuditEntry & EnterpriseAuditEntryData & Node & OrganizationAuditEntryData & {
   __typename?: 'MembersCanDeleteReposEnableAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -11727,12 +11608,7 @@ export type OauthApplicationAuditEntryData = {
 };
 
 /** Audit log entry for a oauth_application.create event. */
-export type OauthApplicationCreateAuditEntry =
-  AuditEntry
-  & Node
-  & OauthApplicationAuditEntryData
-  & OrganizationAuditEntryData
-  & {
+export type OauthApplicationCreateAuditEntry = AuditEntry & Node & OauthApplicationAuditEntryData & OrganizationAuditEntryData & {
   __typename?: 'OauthApplicationCreateAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -12412,12 +12288,7 @@ export type OrgInviteMemberAuditEntry = AuditEntry & Node & OrganizationAuditEnt
 };
 
 /** Audit log entry for a org.invite_to_business event. */
-export type OrgInviteToBusinessAuditEntry =
-  AuditEntry
-  & EnterpriseAuditEntryData
-  & Node
-  & OrganizationAuditEntryData
-  & {
+export type OrgInviteToBusinessAuditEntry = AuditEntry & EnterpriseAuditEntryData & Node & OrganizationAuditEntryData & {
   __typename?: 'OrgInviteToBusinessAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -12463,12 +12334,7 @@ export type OrgInviteToBusinessAuditEntry =
 };
 
 /** Audit log entry for a org.oauth_app_access_approved event. */
-export type OrgOauthAppAccessApprovedAuditEntry =
-  AuditEntry
-  & Node
-  & OauthApplicationAuditEntryData
-  & OrganizationAuditEntryData
-  & {
+export type OrgOauthAppAccessApprovedAuditEntry = AuditEntry & Node & OauthApplicationAuditEntryData & OrganizationAuditEntryData & {
   __typename?: 'OrgOauthAppAccessApprovedAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -12514,12 +12380,7 @@ export type OrgOauthAppAccessApprovedAuditEntry =
 };
 
 /** Audit log entry for a org.oauth_app_access_denied event. */
-export type OrgOauthAppAccessDeniedAuditEntry =
-  AuditEntry
-  & Node
-  & OauthApplicationAuditEntryData
-  & OrganizationAuditEntryData
-  & {
+export type OrgOauthAppAccessDeniedAuditEntry = AuditEntry & Node & OauthApplicationAuditEntryData & OrganizationAuditEntryData & {
   __typename?: 'OrgOauthAppAccessDeniedAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -12565,12 +12426,7 @@ export type OrgOauthAppAccessDeniedAuditEntry =
 };
 
 /** Audit log entry for a org.oauth_app_access_requested event. */
-export type OrgOauthAppAccessRequestedAuditEntry =
-  AuditEntry
-  & Node
-  & OauthApplicationAuditEntryData
-  & OrganizationAuditEntryData
-  & {
+export type OrgOauthAppAccessRequestedAuditEntry = AuditEntry & Node & OauthApplicationAuditEntryData & OrganizationAuditEntryData & {
   __typename?: 'OrgOauthAppAccessRequestedAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -12877,10 +12733,7 @@ export type OrgRestoreMemberAuditEntry = AuditEntry & Node & OrganizationAuditEn
 };
 
 /** Types of memberships that can be restored for an Organization member. */
-export type OrgRestoreMemberAuditEntryMembership =
-  OrgRestoreMemberMembershipOrganizationAuditEntryData
-  | OrgRestoreMemberMembershipRepositoryAuditEntryData
-  | OrgRestoreMemberMembershipTeamAuditEntryData;
+export type OrgRestoreMemberAuditEntryMembership = OrgRestoreMemberMembershipOrganizationAuditEntryData | OrgRestoreMemberMembershipRepositoryAuditEntryData | OrgRestoreMemberMembershipTeamAuditEntryData;
 
 /** Metadata for an organization membership for org.restore_member actions */
 export type OrgRestoreMemberMembershipOrganizationAuditEntryData = OrganizationAuditEntryData & {
@@ -13184,22 +13037,7 @@ export type OrgUpdateMemberRepositoryInvitationPermissionAuditEntry = AuditEntry
 };
 
 /** An account on GitHub, with one or more owners, that has repositories, members and teams. */
-export type Organization =
-  Actor
-  & MemberStatusable
-  & Node
-  & PackageOwner
-  & ProfileOwner
-  & ProjectNextOwner
-  & ProjectOwner
-  & ProjectV2Owner
-  & ProjectV2Recent
-  & RepositoryDiscussionAuthor
-  & RepositoryDiscussionCommentAuthor
-  & RepositoryOwner
-  & Sponsorable
-  & UniformResourceLocatable
-  & {
+export type Organization = Actor & MemberStatusable & Node & PackageOwner & ProfileOwner & ProjectNextOwner & ProjectOwner & ProjectV2Owner & ProjectV2Recent & RepositoryDiscussionAuthor & RepositoryDiscussionCommentAuthor & RepositoryOwner & Sponsorable & UniformResourceLocatable & {
   __typename?: 'Organization';
   /** Determine if this repository owner has any items that can be pinned to their profile. */
   anyPinnableItems: Scalars['Boolean'];
@@ -13711,65 +13549,7 @@ export type OrganizationTeamsArgs = {
 };
 
 /** An audit entry in an organization audit log. */
-export type OrganizationAuditEntry =
-  MembersCanDeleteReposClearAuditEntry
-  | MembersCanDeleteReposDisableAuditEntry
-  | MembersCanDeleteReposEnableAuditEntry
-  | OauthApplicationCreateAuditEntry
-  | OrgAddBillingManagerAuditEntry
-  | OrgAddMemberAuditEntry
-  | OrgBlockUserAuditEntry
-  | OrgConfigDisableCollaboratorsOnlyAuditEntry
-  | OrgConfigEnableCollaboratorsOnlyAuditEntry
-  | OrgCreateAuditEntry
-  | OrgDisableOauthAppRestrictionsAuditEntry
-  | OrgDisableSamlAuditEntry
-  | OrgDisableTwoFactorRequirementAuditEntry
-  | OrgEnableOauthAppRestrictionsAuditEntry
-  | OrgEnableSamlAuditEntry
-  | OrgEnableTwoFactorRequirementAuditEntry
-  | OrgInviteMemberAuditEntry
-  | OrgInviteToBusinessAuditEntry
-  | OrgOauthAppAccessApprovedAuditEntry
-  | OrgOauthAppAccessDeniedAuditEntry
-  | OrgOauthAppAccessRequestedAuditEntry
-  | OrgRemoveBillingManagerAuditEntry
-  | OrgRemoveMemberAuditEntry
-  | OrgRemoveOutsideCollaboratorAuditEntry
-  | OrgRestoreMemberAuditEntry
-  | OrgUnblockUserAuditEntry
-  | OrgUpdateDefaultRepositoryPermissionAuditEntry
-  | OrgUpdateMemberAuditEntry
-  | OrgUpdateMemberRepositoryCreationPermissionAuditEntry
-  | OrgUpdateMemberRepositoryInvitationPermissionAuditEntry
-  | PrivateRepositoryForkingDisableAuditEntry
-  | PrivateRepositoryForkingEnableAuditEntry
-  | RepoAccessAuditEntry
-  | RepoAddMemberAuditEntry
-  | RepoAddTopicAuditEntry
-  | RepoArchivedAuditEntry
-  | RepoChangeMergeSettingAuditEntry
-  | RepoConfigDisableAnonymousGitAccessAuditEntry
-  | RepoConfigDisableCollaboratorsOnlyAuditEntry
-  | RepoConfigDisableContributorsOnlyAuditEntry
-  | RepoConfigDisableSockpuppetDisallowedAuditEntry
-  | RepoConfigEnableAnonymousGitAccessAuditEntry
-  | RepoConfigEnableCollaboratorsOnlyAuditEntry
-  | RepoConfigEnableContributorsOnlyAuditEntry
-  | RepoConfigEnableSockpuppetDisallowedAuditEntry
-  | RepoConfigLockAnonymousGitAccessAuditEntry
-  | RepoConfigUnlockAnonymousGitAccessAuditEntry
-  | RepoCreateAuditEntry
-  | RepoDestroyAuditEntry
-  | RepoRemoveMemberAuditEntry
-  | RepoRemoveTopicAuditEntry
-  | RepositoryVisibilityChangeDisableAuditEntry
-  | RepositoryVisibilityChangeEnableAuditEntry
-  | TeamAddMemberAuditEntry
-  | TeamAddRepositoryAuditEntry
-  | TeamChangeParentTeamAuditEntry
-  | TeamRemoveMemberAuditEntry
-  | TeamRemoveRepositoryAuditEntry;
+export type OrganizationAuditEntry = MembersCanDeleteReposClearAuditEntry | MembersCanDeleteReposDisableAuditEntry | MembersCanDeleteReposEnableAuditEntry | OauthApplicationCreateAuditEntry | OrgAddBillingManagerAuditEntry | OrgAddMemberAuditEntry | OrgBlockUserAuditEntry | OrgConfigDisableCollaboratorsOnlyAuditEntry | OrgConfigEnableCollaboratorsOnlyAuditEntry | OrgCreateAuditEntry | OrgDisableOauthAppRestrictionsAuditEntry | OrgDisableSamlAuditEntry | OrgDisableTwoFactorRequirementAuditEntry | OrgEnableOauthAppRestrictionsAuditEntry | OrgEnableSamlAuditEntry | OrgEnableTwoFactorRequirementAuditEntry | OrgInviteMemberAuditEntry | OrgInviteToBusinessAuditEntry | OrgOauthAppAccessApprovedAuditEntry | OrgOauthAppAccessDeniedAuditEntry | OrgOauthAppAccessRequestedAuditEntry | OrgRemoveBillingManagerAuditEntry | OrgRemoveMemberAuditEntry | OrgRemoveOutsideCollaboratorAuditEntry | OrgRestoreMemberAuditEntry | OrgUnblockUserAuditEntry | OrgUpdateDefaultRepositoryPermissionAuditEntry | OrgUpdateMemberAuditEntry | OrgUpdateMemberRepositoryCreationPermissionAuditEntry | OrgUpdateMemberRepositoryInvitationPermissionAuditEntry | PrivateRepositoryForkingDisableAuditEntry | PrivateRepositoryForkingEnableAuditEntry | RepoAccessAuditEntry | RepoAddMemberAuditEntry | RepoAddTopicAuditEntry | RepoArchivedAuditEntry | RepoChangeMergeSettingAuditEntry | RepoConfigDisableAnonymousGitAccessAuditEntry | RepoConfigDisableCollaboratorsOnlyAuditEntry | RepoConfigDisableContributorsOnlyAuditEntry | RepoConfigDisableSockpuppetDisallowedAuditEntry | RepoConfigEnableAnonymousGitAccessAuditEntry | RepoConfigEnableCollaboratorsOnlyAuditEntry | RepoConfigEnableContributorsOnlyAuditEntry | RepoConfigEnableSockpuppetDisallowedAuditEntry | RepoConfigLockAnonymousGitAccessAuditEntry | RepoConfigUnlockAnonymousGitAccessAuditEntry | RepoCreateAuditEntry | RepoDestroyAuditEntry | RepoRemoveMemberAuditEntry | RepoRemoveTopicAuditEntry | RepositoryVisibilityChangeDisableAuditEntry | RepositoryVisibilityChangeEnableAuditEntry | TeamAddMemberAuditEntry | TeamAddRepositoryAuditEntry | TeamChangeParentTeamAuditEntry | TeamRemoveMemberAuditEntry | TeamRemoveRepositoryAuditEntry;
 
 /** The connection type for OrganizationAuditEntry. */
 export type OrganizationAuditEntryConnection = {
@@ -14553,13 +14333,7 @@ export type PinnedIssueEdge = {
 };
 
 /** Audit log entry for a private_repository_forking.disable event. */
-export type PrivateRepositoryForkingDisableAuditEntry =
-  AuditEntry
-  & EnterpriseAuditEntryData
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & {
+export type PrivateRepositoryForkingDisableAuditEntry = AuditEntry & EnterpriseAuditEntryData & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & {
   __typename?: 'PrivateRepositoryForkingDisableAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -14613,13 +14387,7 @@ export type PrivateRepositoryForkingDisableAuditEntry =
 };
 
 /** Audit log entry for a private_repository_forking.enable event. */
-export type PrivateRepositoryForkingEnableAuditEntry =
-  AuditEntry
-  & EnterpriseAuditEntryData
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & {
+export type PrivateRepositoryForkingEnableAuditEntry = AuditEntry & EnterpriseAuditEntryData & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & {
   __typename?: 'PrivateRepositoryForkingEnableAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -16194,18 +15962,7 @@ export type ProjectV2ItemFieldUserValueUsersArgs = {
 };
 
 /** Project field values */
-export type ProjectV2ItemFieldValue =
-  ProjectV2ItemFieldDateValue
-  | ProjectV2ItemFieldIterationValue
-  | ProjectV2ItemFieldLabelValue
-  | ProjectV2ItemFieldMilestoneValue
-  | ProjectV2ItemFieldNumberValue
-  | ProjectV2ItemFieldPullRequestValue
-  | ProjectV2ItemFieldRepositoryValue
-  | ProjectV2ItemFieldReviewerValue
-  | ProjectV2ItemFieldSingleSelectValue
-  | ProjectV2ItemFieldTextValue
-  | ProjectV2ItemFieldUserValue;
+export type ProjectV2ItemFieldValue = ProjectV2ItemFieldDateValue | ProjectV2ItemFieldIterationValue | ProjectV2ItemFieldLabelValue | ProjectV2ItemFieldMilestoneValue | ProjectV2ItemFieldNumberValue | ProjectV2ItemFieldPullRequestValue | ProjectV2ItemFieldRepositoryValue | ProjectV2ItemFieldReviewerValue | ProjectV2ItemFieldSingleSelectValue | ProjectV2ItemFieldTextValue | ProjectV2ItemFieldUserValue;
 
 /** Common fields across different project field value types */
 export type ProjectV2ItemFieldValueCommon = {
@@ -16808,22 +16565,7 @@ export type PublicKeyEdge = {
 };
 
 /** A repository pull request. */
-export type PullRequest =
-  Assignable
-  & Closable
-  & Comment
-  & Labelable
-  & Lockable
-  & Node
-  & ProjectNextOwner
-  & ProjectV2Owner
-  & Reactable
-  & RepositoryNode
-  & Subscribable
-  & UniformResourceLocatable
-  & Updatable
-  & UpdatableComment
-  & {
+export type PullRequest = Assignable & Closable & Comment & Labelable & Lockable & Node & ProjectNextOwner & ProjectV2Owner & Reactable & RepositoryNode & Subscribable & UniformResourceLocatable & Updatable & UpdatableComment & {
   __typename?: 'PullRequest';
   /** Reason that the conversation was locked. */
   activeLockReason?: Maybe<LockReason>;
@@ -17448,15 +17190,7 @@ export enum PullRequestOrderField {
 }
 
 /** A review object for a given pull request. */
-export type PullRequestReview =
-  Comment
-  & Deletable
-  & Node
-  & Reactable
-  & RepositoryNode
-  & Updatable
-  & UpdatableComment
-  & {
+export type PullRequestReview = Comment & Deletable & Node & Reactable & RepositoryNode & Updatable & UpdatableComment & {
   __typename?: 'PullRequestReview';
   /** The actor who authored the comment. */
   author?: Maybe<Actor>;
@@ -17562,16 +17296,7 @@ export type PullRequestReviewUserContentEditsArgs = {
 };
 
 /** A review comment associated with a given repository pull request. */
-export type PullRequestReviewComment =
-  Comment
-  & Deletable
-  & Minimizable
-  & Node
-  & Reactable
-  & RepositoryNode
-  & Updatable
-  & UpdatableComment
-  & {
+export type PullRequestReviewComment = Comment & Deletable & Minimizable & Node & Reactable & RepositoryNode & Updatable & UpdatableComment & {
   __typename?: 'PullRequestReviewComment';
   /** The actor who authored the comment. */
   author?: Maybe<Actor>;
@@ -17947,40 +17672,7 @@ export type PullRequestTimelineConnection = {
 };
 
 /** An item in a pull request timeline */
-export type PullRequestTimelineItem =
-  AssignedEvent
-  | BaseRefDeletedEvent
-  | BaseRefForcePushedEvent
-  | ClosedEvent
-  | Commit
-  | CommitCommentThread
-  | CrossReferencedEvent
-  | DemilestonedEvent
-  | DeployedEvent
-  | DeploymentEnvironmentChangedEvent
-  | HeadRefDeletedEvent
-  | HeadRefForcePushedEvent
-  | HeadRefRestoredEvent
-  | IssueComment
-  | LabeledEvent
-  | LockedEvent
-  | MergedEvent
-  | MilestonedEvent
-  | PullRequestReview
-  | PullRequestReviewComment
-  | PullRequestReviewThread
-  | ReferencedEvent
-  | RenamedTitleEvent
-  | ReopenedEvent
-  | ReviewDismissedEvent
-  | ReviewRequestRemovedEvent
-  | ReviewRequestedEvent
-  | SubscribedEvent
-  | UnassignedEvent
-  | UnlabeledEvent
-  | UnlockedEvent
-  | UnsubscribedEvent
-  | UserBlockedEvent;
+export type PullRequestTimelineItem = AssignedEvent | BaseRefDeletedEvent | BaseRefForcePushedEvent | ClosedEvent | Commit | CommitCommentThread | CrossReferencedEvent | DemilestonedEvent | DeployedEvent | DeploymentEnvironmentChangedEvent | HeadRefDeletedEvent | HeadRefForcePushedEvent | HeadRefRestoredEvent | IssueComment | LabeledEvent | LockedEvent | MergedEvent | MilestonedEvent | PullRequestReview | PullRequestReviewComment | PullRequestReviewThread | ReferencedEvent | RenamedTitleEvent | ReopenedEvent | ReviewDismissedEvent | ReviewRequestRemovedEvent | ReviewRequestedEvent | SubscribedEvent | UnassignedEvent | UnlabeledEvent | UnlockedEvent | UnsubscribedEvent | UserBlockedEvent;
 
 /** An edge in a connection. */
 export type PullRequestTimelineItemEdge = {
@@ -17992,63 +17684,7 @@ export type PullRequestTimelineItemEdge = {
 };
 
 /** An item in a pull request timeline */
-export type PullRequestTimelineItems =
-  AddedToProjectEvent
-  | AssignedEvent
-  | AutoMergeDisabledEvent
-  | AutoMergeEnabledEvent
-  | AutoRebaseEnabledEvent
-  | AutoSquashEnabledEvent
-  | AutomaticBaseChangeFailedEvent
-  | AutomaticBaseChangeSucceededEvent
-  | BaseRefChangedEvent
-  | BaseRefDeletedEvent
-  | BaseRefForcePushedEvent
-  | ClosedEvent
-  | CommentDeletedEvent
-  | ConnectedEvent
-  | ConvertToDraftEvent
-  | ConvertedNoteToIssueEvent
-  | ConvertedToDiscussionEvent
-  | CrossReferencedEvent
-  | DemilestonedEvent
-  | DeployedEvent
-  | DeploymentEnvironmentChangedEvent
-  | DisconnectedEvent
-  | HeadRefDeletedEvent
-  | HeadRefForcePushedEvent
-  | HeadRefRestoredEvent
-  | IssueComment
-  | LabeledEvent
-  | LockedEvent
-  | MarkedAsDuplicateEvent
-  | MentionedEvent
-  | MergedEvent
-  | MilestonedEvent
-  | MovedColumnsInProjectEvent
-  | PinnedEvent
-  | PullRequestCommit
-  | PullRequestCommitCommentThread
-  | PullRequestReview
-  | PullRequestReviewThread
-  | PullRequestRevisionMarker
-  | ReadyForReviewEvent
-  | ReferencedEvent
-  | RemovedFromProjectEvent
-  | RenamedTitleEvent
-  | ReopenedEvent
-  | ReviewDismissedEvent
-  | ReviewRequestRemovedEvent
-  | ReviewRequestedEvent
-  | SubscribedEvent
-  | TransferredEvent
-  | UnassignedEvent
-  | UnlabeledEvent
-  | UnlockedEvent
-  | UnmarkedAsDuplicateEvent
-  | UnpinnedEvent
-  | UnsubscribedEvent
-  | UserBlockedEvent;
+export type PullRequestTimelineItems = AddedToProjectEvent | AssignedEvent | AutoMergeDisabledEvent | AutoMergeEnabledEvent | AutoRebaseEnabledEvent | AutoSquashEnabledEvent | AutomaticBaseChangeFailedEvent | AutomaticBaseChangeSucceededEvent | BaseRefChangedEvent | BaseRefDeletedEvent | BaseRefForcePushedEvent | ClosedEvent | CommentDeletedEvent | ConnectedEvent | ConvertToDraftEvent | ConvertedNoteToIssueEvent | ConvertedToDiscussionEvent | CrossReferencedEvent | DemilestonedEvent | DeployedEvent | DeploymentEnvironmentChangedEvent | DisconnectedEvent | HeadRefDeletedEvent | HeadRefForcePushedEvent | HeadRefRestoredEvent | IssueComment | LabeledEvent | LockedEvent | MarkedAsDuplicateEvent | MentionedEvent | MergedEvent | MilestonedEvent | MovedColumnsInProjectEvent | PinnedEvent | PullRequestCommit | PullRequestCommitCommentThread | PullRequestReview | PullRequestReviewThread | PullRequestRevisionMarker | ReadyForReviewEvent | ReferencedEvent | RemovedFromProjectEvent | RenamedTitleEvent | ReopenedEvent | ReviewDismissedEvent | ReviewRequestRemovedEvent | ReviewRequestedEvent | SubscribedEvent | TransferredEvent | UnassignedEvent | UnlabeledEvent | UnlockedEvent | UnmarkedAsDuplicateEvent | UnpinnedEvent | UnsubscribedEvent | UserBlockedEvent;
 
 /** The connection type for PullRequestTimelineItems. */
 export type PullRequestTimelineItemsConnection = {
@@ -19497,13 +19133,7 @@ export enum RepoAddMemberAuditEntryVisibility {
 }
 
 /** Audit log entry for a repo.add_topic event. */
-export type RepoAddTopicAuditEntry =
-  AuditEntry
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & TopicAuditEntryData
-  & {
+export type RepoAddTopicAuditEntry = AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & TopicAuditEntryData & {
   __typename?: 'RepoAddTopicAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -19615,12 +19245,7 @@ export enum RepoArchivedAuditEntryVisibility {
 }
 
 /** Audit log entry for a repo.change_merge_setting event. */
-export type RepoChangeMergeSettingAuditEntry =
-  AuditEntry
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & {
+export type RepoChangeMergeSettingAuditEntry = AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & {
   __typename?: 'RepoChangeMergeSettingAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -19682,12 +19307,7 @@ export enum RepoChangeMergeSettingAuditEntryMergeType {
 }
 
 /** Audit log entry for a repo.config.disable_anonymous_git_access event. */
-export type RepoConfigDisableAnonymousGitAccessAuditEntry =
-  AuditEntry
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & {
+export type RepoConfigDisableAnonymousGitAccessAuditEntry = AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & {
   __typename?: 'RepoConfigDisableAnonymousGitAccessAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -19735,12 +19355,7 @@ export type RepoConfigDisableAnonymousGitAccessAuditEntry =
 };
 
 /** Audit log entry for a repo.config.disable_collaborators_only event. */
-export type RepoConfigDisableCollaboratorsOnlyAuditEntry =
-  AuditEntry
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & {
+export type RepoConfigDisableCollaboratorsOnlyAuditEntry = AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & {
   __typename?: 'RepoConfigDisableCollaboratorsOnlyAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -19788,12 +19403,7 @@ export type RepoConfigDisableCollaboratorsOnlyAuditEntry =
 };
 
 /** Audit log entry for a repo.config.disable_contributors_only event. */
-export type RepoConfigDisableContributorsOnlyAuditEntry =
-  AuditEntry
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & {
+export type RepoConfigDisableContributorsOnlyAuditEntry = AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & {
   __typename?: 'RepoConfigDisableContributorsOnlyAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -19841,12 +19451,7 @@ export type RepoConfigDisableContributorsOnlyAuditEntry =
 };
 
 /** Audit log entry for a repo.config.disable_sockpuppet_disallowed event. */
-export type RepoConfigDisableSockpuppetDisallowedAuditEntry =
-  AuditEntry
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & {
+export type RepoConfigDisableSockpuppetDisallowedAuditEntry = AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & {
   __typename?: 'RepoConfigDisableSockpuppetDisallowedAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -19894,12 +19499,7 @@ export type RepoConfigDisableSockpuppetDisallowedAuditEntry =
 };
 
 /** Audit log entry for a repo.config.enable_anonymous_git_access event. */
-export type RepoConfigEnableAnonymousGitAccessAuditEntry =
-  AuditEntry
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & {
+export type RepoConfigEnableAnonymousGitAccessAuditEntry = AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & {
   __typename?: 'RepoConfigEnableAnonymousGitAccessAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -19947,12 +19547,7 @@ export type RepoConfigEnableAnonymousGitAccessAuditEntry =
 };
 
 /** Audit log entry for a repo.config.enable_collaborators_only event. */
-export type RepoConfigEnableCollaboratorsOnlyAuditEntry =
-  AuditEntry
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & {
+export type RepoConfigEnableCollaboratorsOnlyAuditEntry = AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & {
   __typename?: 'RepoConfigEnableCollaboratorsOnlyAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -20000,12 +19595,7 @@ export type RepoConfigEnableCollaboratorsOnlyAuditEntry =
 };
 
 /** Audit log entry for a repo.config.enable_contributors_only event. */
-export type RepoConfigEnableContributorsOnlyAuditEntry =
-  AuditEntry
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & {
+export type RepoConfigEnableContributorsOnlyAuditEntry = AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & {
   __typename?: 'RepoConfigEnableContributorsOnlyAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -20053,12 +19643,7 @@ export type RepoConfigEnableContributorsOnlyAuditEntry =
 };
 
 /** Audit log entry for a repo.config.enable_sockpuppet_disallowed event. */
-export type RepoConfigEnableSockpuppetDisallowedAuditEntry =
-  AuditEntry
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & {
+export type RepoConfigEnableSockpuppetDisallowedAuditEntry = AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & {
   __typename?: 'RepoConfigEnableSockpuppetDisallowedAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -20106,12 +19691,7 @@ export type RepoConfigEnableSockpuppetDisallowedAuditEntry =
 };
 
 /** Audit log entry for a repo.config.lock_anonymous_git_access event. */
-export type RepoConfigLockAnonymousGitAccessAuditEntry =
-  AuditEntry
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & {
+export type RepoConfigLockAnonymousGitAccessAuditEntry = AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & {
   __typename?: 'RepoConfigLockAnonymousGitAccessAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -20159,12 +19739,7 @@ export type RepoConfigLockAnonymousGitAccessAuditEntry =
 };
 
 /** Audit log entry for a repo.config.unlock_anonymous_git_access event. */
-export type RepoConfigUnlockAnonymousGitAccessAuditEntry =
-  AuditEntry
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & {
+export type RepoConfigUnlockAnonymousGitAccessAuditEntry = AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & {
   __typename?: 'RepoConfigUnlockAnonymousGitAccessAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -20396,13 +19971,7 @@ export enum RepoRemoveMemberAuditEntryVisibility {
 }
 
 /** Audit log entry for a repo.remove_topic event. */
-export type RepoRemoveTopicAuditEntry =
-  AuditEntry
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & TopicAuditEntryData
-  & {
+export type RepoRemoveTopicAuditEntry = AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & TopicAuditEntryData & {
   __typename?: 'RepoRemoveTopicAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -20470,16 +20039,7 @@ export enum ReportedContentClassifiers {
 }
 
 /** A repository contains the content for a project. */
-export type Repository =
-  Node
-  & PackageOwner
-  & ProjectOwner
-  & ProjectV2Recent
-  & RepositoryInfo
-  & Starrable
-  & Subscribable
-  & UniformResourceLocatable
-  & {
+export type Repository = Node & PackageOwner & ProjectOwner & ProjectV2Recent & RepositoryInfo & Starrable & Subscribable & UniformResourceLocatable & {
   __typename?: 'Repository';
   /**
    * Whether or not a pull request head branch that is behind its base branch can
@@ -21721,12 +21281,7 @@ export enum RepositoryVisibility {
 }
 
 /** Audit log entry for a repository_visibility_change.disable event. */
-export type RepositoryVisibilityChangeDisableAuditEntry =
-  AuditEntry
-  & EnterpriseAuditEntryData
-  & Node
-  & OrganizationAuditEntryData
-  & {
+export type RepositoryVisibilityChangeDisableAuditEntry = AuditEntry & EnterpriseAuditEntryData & Node & OrganizationAuditEntryData & {
   __typename?: 'RepositoryVisibilityChangeDisableAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -21772,12 +21327,7 @@ export type RepositoryVisibilityChangeDisableAuditEntry =
 };
 
 /** Audit log entry for a repository_visibility_change.enable event. */
-export type RepositoryVisibilityChangeEnableAuditEntry =
-  AuditEntry
-  & EnterpriseAuditEntryData
-  & Node
-  & OrganizationAuditEntryData
-  & {
+export type RepositoryVisibilityChangeEnableAuditEntry = AuditEntry & EnterpriseAuditEntryData & Node & OrganizationAuditEntryData & {
   __typename?: 'RepositoryVisibilityChangeEnableAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -22337,15 +21887,7 @@ export enum SavedReplyOrderField {
 }
 
 /** The results of a search. */
-export type SearchResultItem =
-  App
-  | Discussion
-  | Issue
-  | MarketplaceListing
-  | Organization
-  | PullRequest
-  | Repository
-  | User;
+export type SearchResultItem = App | Discussion | Issue | MarketplaceListing | Organization | PullRequest | Repository | User;
 
 /**
  * A list of results that matched against a search query. Regardless of the number
@@ -24057,13 +23599,7 @@ export type TeamAddMemberAuditEntry = AuditEntry & Node & OrganizationAuditEntry
 };
 
 /** Audit log entry for a team.add_repository event. */
-export type TeamAddRepositoryAuditEntry =
-  AuditEntry
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & TeamAuditEntryData
-  & {
+export type TeamAddRepositoryAuditEntry = AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & TeamAuditEntryData & {
   __typename?: 'TeamAddRepositoryAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -24212,16 +23748,7 @@ export type TeamConnection = {
 };
 
 /** A team discussion. */
-export type TeamDiscussion =
-  Comment
-  & Deletable
-  & Node
-  & Reactable
-  & Subscribable
-  & UniformResourceLocatable
-  & Updatable
-  & UpdatableComment
-  & {
+export type TeamDiscussion = Comment & Deletable & Node & Reactable & Subscribable & UniformResourceLocatable & Updatable & UpdatableComment & {
   __typename?: 'TeamDiscussion';
   /** The actor who authored the comment. */
   author?: Maybe<Actor>;
@@ -24328,15 +23855,7 @@ export type TeamDiscussionUserContentEditsArgs = {
 };
 
 /** A comment on a team discussion. */
-export type TeamDiscussionComment =
-  Comment
-  & Deletable
-  & Node
-  & Reactable
-  & UniformResourceLocatable
-  & Updatable
-  & UpdatableComment
-  & {
+export type TeamDiscussionComment = Comment & Deletable & Node & Reactable & UniformResourceLocatable & Updatable & UpdatableComment & {
   __typename?: 'TeamDiscussionComment';
   /** The actor who authored the comment. */
   author?: Maybe<Actor>;
@@ -24628,13 +24147,7 @@ export type TeamRemoveMemberAuditEntry = AuditEntry & Node & OrganizationAuditEn
 };
 
 /** Audit log entry for a team.remove_repository event. */
-export type TeamRemoveRepositoryAuditEntry =
-  AuditEntry
-  & Node
-  & OrganizationAuditEntryData
-  & RepositoryAuditEntryData
-  & TeamAuditEntryData
-  & {
+export type TeamRemoveRepositoryAuditEntry = AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData & TeamAuditEntryData & {
   __typename?: 'TeamRemoveRepositoryAuditEntry';
   /** The action name */
   action: Scalars['String'];
@@ -26740,21 +26253,7 @@ export type UpdateTopicsPayload = {
 };
 
 /** A user is an individual's account on GitHub that owns repositories and can make new content. */
-export type User =
-  Actor
-  & Node
-  & PackageOwner
-  & ProfileOwner
-  & ProjectNextOwner
-  & ProjectOwner
-  & ProjectV2Owner
-  & ProjectV2Recent
-  & RepositoryDiscussionAuthor
-  & RepositoryDiscussionCommentAuthor
-  & RepositoryOwner
-  & Sponsorable
-  & UniformResourceLocatable
-  & {
+export type User = Actor & Node & PackageOwner & ProfileOwner & ProjectNextOwner & ProjectOwner & ProjectV2Owner & ProjectV2Recent & RepositoryDiscussionAuthor & RepositoryDiscussionCommentAuthor & RepositoryOwner & Sponsorable & UniformResourceLocatable & {
   __typename?: 'User';
   /** Determine if this repository owner has any items that can be pinned to their profile. */
   anyPinnableItems: Scalars['Boolean'];
@@ -27759,308 +27258,7 @@ export type GetProjectsQueryVariables = Exact<{
 }>;
 
 
-export type GetProjectsQuery = {
-  __typename?: 'Query', organization?: {
-    __typename?: 'Organization', projectsUrl: any, projectsResourcePath: any, name?: string | null, projectV2?: {
-      __typename?: 'ProjectV2', items: {
-        __typename?: 'ProjectV2ItemConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', endCursor?: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null }, edges?: Array<{
-          __typename?: 'ProjectV2ItemEdge', cursor: string, node?: {
-            __typename?: 'ProjectV2Item', id: string, fieldValues: {
-              __typename?: 'ProjectV2ItemFieldValueConnection', edges?: Array<{
-                __typename?: 'ProjectV2ItemFieldValueEdge', cursor: string, node?: { __typename: 'ProjectV2ItemFieldDateValue' } | { __typename: 'ProjectV2ItemFieldIterationValue' } | { __typename: 'ProjectV2ItemFieldLabelValue', field: { __typename: 'ProjectV2Field', name: string } | { __typename: 'ProjectV2IterationField', name: string } | { __typename: 'ProjectV2SingleSelectField', name: string }, labels?: { __typename?: 'LabelConnection', nodes?: Array<{ __typename: 'Label', name: string, color: string, url: any } | null> | null } | null } | { __typename: 'ProjectV2ItemFieldMilestoneValue' } | { __typename: 'ProjectV2ItemFieldNumberValue', number?: number | null, field: { __typename: 'ProjectV2Field', name: string } | { __typename: 'ProjectV2IterationField' } | { __typename: 'ProjectV2SingleSelectField' } } | { __typename: 'ProjectV2ItemFieldPullRequestValue' } | { __typename: 'ProjectV2ItemFieldRepositoryValue' } | { __typename: 'ProjectV2ItemFieldReviewerValue' } | { __typename: 'ProjectV2ItemFieldSingleSelectValue', name?: string | null, field: { __typename: 'ProjectV2Field' } | { __typename: 'ProjectV2IterationField' } | { __typename: 'ProjectV2SingleSelectField', name: string } } | { __typename: 'ProjectV2ItemFieldTextValue' } | { __typename: 'ProjectV2ItemFieldUserValue' } | null
-              } | null> | null
-            }, content?: { __typename: 'DraftIssue' } | { __typename: 'Issue', body: string, title: string, bodyHTML: any, bodyUrl: any, bodyText: string, state: IssueState, stateReason?: IssueStateReason | null, closed: boolean, closedAt?: any | null, updatedAt: any, publishedAt?: any | null, author?: { __typename?: 'Bot', avatarUrl: any, login: string, url: any } | { __typename?: 'EnterpriseUserAccount', avatarUrl: any, login: string, url: any } | { __typename?: 'Mannequin', avatarUrl: any, login: string, url: any } | { __typename?: 'Organization', avatarUrl: any, login: string, url: any } | { __typename?: 'User', avatarUrl: any, login: string, url: any } | null } | { __typename: 'PullRequest' } | null
-          } | null
-        } | null> | null
-      }
-    } | null
-  } | null
-};
+export type GetProjectsQuery = { __typename?: 'Query', organization?: { __typename?: 'Organization', projectsUrl: any, projectsResourcePath: any, name?: string | null, projectV2?: { __typename?: 'ProjectV2', items: { __typename?: 'ProjectV2ItemConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', endCursor?: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null }, edges?: Array<{ __typename?: 'ProjectV2ItemEdge', cursor: string, node?: { __typename?: 'ProjectV2Item', id: string, fieldValues: { __typename?: 'ProjectV2ItemFieldValueConnection', edges?: Array<{ __typename?: 'ProjectV2ItemFieldValueEdge', cursor: string, node?: { __typename: 'ProjectV2ItemFieldDateValue' } | { __typename: 'ProjectV2ItemFieldIterationValue' } | { __typename: 'ProjectV2ItemFieldLabelValue', field: { __typename: 'ProjectV2Field', name: string } | { __typename: 'ProjectV2IterationField', name: string } | { __typename: 'ProjectV2SingleSelectField', name: string }, labels?: { __typename?: 'LabelConnection', nodes?: Array<{ __typename: 'Label', name: string, color: string, url: any } | null> | null } | null } | { __typename: 'ProjectV2ItemFieldMilestoneValue' } | { __typename: 'ProjectV2ItemFieldNumberValue', number?: number | null, field: { __typename: 'ProjectV2Field', name: string } | { __typename: 'ProjectV2IterationField' } | { __typename: 'ProjectV2SingleSelectField' } } | { __typename: 'ProjectV2ItemFieldPullRequestValue' } | { __typename: 'ProjectV2ItemFieldRepositoryValue' } | { __typename: 'ProjectV2ItemFieldReviewerValue' } | { __typename: 'ProjectV2ItemFieldSingleSelectValue', name?: string | null, field: { __typename: 'ProjectV2Field' } | { __typename: 'ProjectV2IterationField' } | { __typename: 'ProjectV2SingleSelectField', name: string } } | { __typename: 'ProjectV2ItemFieldTextValue' } | { __typename: 'ProjectV2ItemFieldUserValue' } | null } | null> | null }, content?: { __typename: 'DraftIssue' } | { __typename: 'Issue', body: string, title: string, bodyHTML: any, bodyUrl: any, bodyText: string, state: IssueState, stateReason?: IssueStateReason | null, closed: boolean, closedAt?: any | null, updatedAt: any, publishedAt?: any | null, author?: { __typename?: 'Bot', avatarUrl: any, login: string, url: any } | { __typename?: 'EnterpriseUserAccount', avatarUrl: any, login: string, url: any } | { __typename?: 'Mannequin', avatarUrl: any, login: string, url: any } | { __typename?: 'Organization', avatarUrl: any, login: string, url: any } | { __typename?: 'User', avatarUrl: any, login: string, url: any } | null } | { __typename: 'PullRequest' } | null } | null } | null> | null } } | null } | null };
 
 
-export const GetProjectsDocument = {
-  "kind": "Document", "definitions": [{
-    "kind": "OperationDefinition",
-    "operation": "query",
-    "name": {"kind": "Name", "value": "getProjects"},
-    "variableDefinitions": [{
-      "kind": "VariableDefinition",
-      "variable": {"kind": "Variable", "name": {"kind": "Name", "value": "org"}},
-      "type": {"kind": "NonNullType", "type": {"kind": "NamedType", "name": {"kind": "Name", "value": "String"}}}
-    }, {
-      "kind": "VariableDefinition",
-      "variable": {"kind": "Variable", "name": {"kind": "Name", "value": "projectId"}},
-      "type": {"kind": "NonNullType", "type": {"kind": "NamedType", "name": {"kind": "Name", "value": "Int"}}}
-    }, {
-      "kind": "VariableDefinition",
-      "variable": {"kind": "Variable", "name": {"kind": "Name", "value": "first"}},
-      "type": {"kind": "NonNullType", "type": {"kind": "NamedType", "name": {"kind": "Name", "value": "Int"}}}
-    }, {
-      "kind": "VariableDefinition",
-      "variable": {"kind": "Variable", "name": {"kind": "Name", "value": "after"}},
-      "type": {"kind": "NamedType", "name": {"kind": "Name", "value": "String"}}
-    }],
-    "selectionSet": {
-      "kind": "SelectionSet", "selections": [{
-        "kind": "Field",
-        "name": {"kind": "Name", "value": "organization"},
-        "arguments": [{
-          "kind": "Argument",
-          "name": {"kind": "Name", "value": "login"},
-          "value": {"kind": "Variable", "name": {"kind": "Name", "value": "org"}}
-        }],
-        "selectionSet": {
-          "kind": "SelectionSet",
-          "selections": [{"kind": "Field", "name": {"kind": "Name", "value": "projectsUrl"}}, {
-            "kind": "Field",
-            "name": {"kind": "Name", "value": "projectsResourcePath"}
-          }, {"kind": "Field", "name": {"kind": "Name", "value": "name"}}, {
-            "kind": "Field",
-            "name": {"kind": "Name", "value": "projectV2"},
-            "arguments": [{
-              "kind": "Argument",
-              "name": {"kind": "Name", "value": "number"},
-              "value": {"kind": "Variable", "name": {"kind": "Name", "value": "projectId"}}
-            }],
-            "selectionSet": {
-              "kind": "SelectionSet", "selections": [{
-                "kind": "Field",
-                "name": {"kind": "Name", "value": "items"},
-                "arguments": [{
-                  "kind": "Argument",
-                  "name": {"kind": "Name", "value": "first"},
-                  "value": {"kind": "Variable", "name": {"kind": "Name", "value": "first"}}
-                }, {
-                  "kind": "Argument",
-                  "name": {"kind": "Name", "value": "after"},
-                  "value": {"kind": "Variable", "name": {"kind": "Name", "value": "after"}}
-                }],
-                "selectionSet": {
-                  "kind": "SelectionSet",
-                  "selections": [{"kind": "Field", "name": {"kind": "Name", "value": "totalCount"}}, {
-                    "kind": "Field",
-                    "name": {"kind": "Name", "value": "pageInfo"},
-                    "selectionSet": {
-                      "kind": "SelectionSet",
-                      "selections": [{
-                        "kind": "Field",
-                        "name": {"kind": "Name", "value": "endCursor"}
-                      }, {"kind": "Field", "name": {"kind": "Name", "value": "hasNextPage"}}, {
-                        "kind": "Field",
-                        "name": {"kind": "Name", "value": "hasPreviousPage"}
-                      }, {"kind": "Field", "name": {"kind": "Name", "value": "startCursor"}}]
-                    }
-                  }, {
-                    "kind": "Field", "name": {"kind": "Name", "value": "edges"}, "selectionSet": {
-                      "kind": "SelectionSet",
-                      "selections": [{"kind": "Field", "name": {"kind": "Name", "value": "cursor"}}, {
-                        "kind": "Field", "name": {"kind": "Name", "value": "node"}, "selectionSet": {
-                          "kind": "SelectionSet",
-                          "selections": [{"kind": "Field", "name": {"kind": "Name", "value": "id"}}, {
-                            "kind": "Field",
-                            "name": {"kind": "Name", "value": "fieldValues"},
-                            "arguments": [{
-                              "kind": "Argument",
-                              "name": {"kind": "Name", "value": "first"},
-                              "value": {"kind": "IntValue", "value": "20"}
-                            }],
-                            "selectionSet": {
-                              "kind": "SelectionSet", "selections": [{
-                                "kind": "Field", "name": {"kind": "Name", "value": "edges"}, "selectionSet": {
-                                  "kind": "SelectionSet",
-                                  "selections": [{"kind": "Field", "name": {"kind": "Name", "value": "cursor"}}, {
-                                    "kind": "Field", "name": {"kind": "Name", "value": "node"}, "selectionSet": {
-                                      "kind": "SelectionSet",
-                                      "selections": [{
-                                        "kind": "Field",
-                                        "name": {"kind": "Name", "value": "__typename"}
-                                      }, {
-                                        "kind": "InlineFragment",
-                                        "typeCondition": {
-                                          "kind": "NamedType",
-                                          "name": {"kind": "Name", "value": "ProjectV2ItemFieldLabelValue"}
-                                        },
-                                        "selectionSet": {
-                                          "kind": "SelectionSet",
-                                          "selections": [{
-                                            "kind": "Field",
-                                            "name": {"kind": "Name", "value": "field"},
-                                            "selectionSet": {
-                                              "kind": "SelectionSet",
-                                              "selections": [{
-                                                "kind": "Field",
-                                                "name": {"kind": "Name", "value": "__typename"}
-                                              }, {
-                                                "kind": "InlineFragment",
-                                                "typeCondition": {
-                                                  "kind": "NamedType",
-                                                  "name": {"kind": "Name", "value": "ProjectV2FieldCommon"}
-                                                },
-                                                "selectionSet": {
-                                                  "kind": "SelectionSet",
-                                                  "selections": [{
-                                                    "kind": "Field",
-                                                    "name": {"kind": "Name", "value": "name"}
-                                                  }]
-                                                }
-                                              }]
-                                            }
-                                          }, {
-                                            "kind": "Field",
-                                            "name": {"kind": "Name", "value": "labels"},
-                                            "arguments": [{
-                                              "kind": "Argument",
-                                              "name": {"kind": "Name", "value": "first"},
-                                              "value": {"kind": "IntValue", "value": "10"}
-                                            }],
-                                            "selectionSet": {
-                                              "kind": "SelectionSet",
-                                              "selections": [{
-                                                "kind": "Field",
-                                                "name": {"kind": "Name", "value": "nodes"},
-                                                "selectionSet": {
-                                                  "kind": "SelectionSet",
-                                                  "selections": [{
-                                                    "kind": "Field",
-                                                    "name": {"kind": "Name", "value": "__typename"}
-                                                  }, {
-                                                    "kind": "Field",
-                                                    "name": {"kind": "Name", "value": "name"}
-                                                  }, {
-                                                    "kind": "Field",
-                                                    "name": {"kind": "Name", "value": "color"}
-                                                  }, {"kind": "Field", "name": {"kind": "Name", "value": "url"}}]
-                                                }
-                                              }]
-                                            }
-                                          }]
-                                        }
-                                      }, {
-                                        "kind": "InlineFragment",
-                                        "typeCondition": {
-                                          "kind": "NamedType",
-                                          "name": {"kind": "Name", "value": "ProjectV2ItemFieldSingleSelectValue"}
-                                        },
-                                        "selectionSet": {
-                                          "kind": "SelectionSet",
-                                          "selections": [{
-                                            "kind": "Field",
-                                            "name": {"kind": "Name", "value": "field"},
-                                            "selectionSet": {
-                                              "kind": "SelectionSet",
-                                              "selections": [{
-                                                "kind": "Field",
-                                                "name": {"kind": "Name", "value": "__typename"}
-                                              }, {
-                                                "kind": "InlineFragment",
-                                                "typeCondition": {
-                                                  "kind": "NamedType",
-                                                  "name": {"kind": "Name", "value": "ProjectV2SingleSelectField"}
-                                                },
-                                                "selectionSet": {
-                                                  "kind": "SelectionSet",
-                                                  "selections": [{
-                                                    "kind": "Field",
-                                                    "name": {"kind": "Name", "value": "__typename"}
-                                                  }, {"kind": "Field", "name": {"kind": "Name", "value": "name"}}]
-                                                }
-                                              }]
-                                            }
-                                          }, {"kind": "Field", "name": {"kind": "Name", "value": "name"}}]
-                                        }
-                                      }, {
-                                        "kind": "InlineFragment",
-                                        "typeCondition": {
-                                          "kind": "NamedType",
-                                          "name": {"kind": "Name", "value": "ProjectV2ItemFieldNumberValue"}
-                                        },
-                                        "selectionSet": {
-                                          "kind": "SelectionSet",
-                                          "selections": [{
-                                            "kind": "Field",
-                                            "name": {"kind": "Name", "value": "field"},
-                                            "selectionSet": {
-                                              "kind": "SelectionSet",
-                                              "selections": [{
-                                                "kind": "Field",
-                                                "name": {"kind": "Name", "value": "__typename"}
-                                              }, {
-                                                "kind": "InlineFragment",
-                                                "typeCondition": {
-                                                  "kind": "NamedType",
-                                                  "name": {"kind": "Name", "value": "ProjectV2Field"}
-                                                },
-                                                "selectionSet": {
-                                                  "kind": "SelectionSet",
-                                                  "selections": [{
-                                                    "kind": "Field",
-                                                    "name": {"kind": "Name", "value": "__typename"}
-                                                  }, {"kind": "Field", "name": {"kind": "Name", "value": "name"}}]
-                                                }
-                                              }]
-                                            }
-                                          }, {"kind": "Field", "name": {"kind": "Name", "value": "number"}}]
-                                        }
-                                      }]
-                                    }
-                                  }]
-                                }
-                              }]
-                            }
-                          }, {
-                            "kind": "Field", "name": {"kind": "Name", "value": "content"}, "selectionSet": {
-                              "kind": "SelectionSet",
-                              "selections": [{"kind": "Field", "name": {"kind": "Name", "value": "__typename"}}, {
-                                "kind": "InlineFragment",
-                                "typeCondition": {"kind": "NamedType", "name": {"kind": "Name", "value": "Issue"}},
-                                "selectionSet": {
-                                  "kind": "SelectionSet",
-                                  "selections": [{
-                                    "kind": "Field",
-                                    "name": {"kind": "Name", "value": "body"}
-                                  }, {"kind": "Field", "name": {"kind": "Name", "value": "title"}}, {
-                                    "kind": "Field",
-                                    "name": {"kind": "Name", "value": "bodyHTML"}
-                                  }, {"kind": "Field", "name": {"kind": "Name", "value": "bodyUrl"}}, {
-                                    "kind": "Field",
-                                    "name": {"kind": "Name", "value": "bodyText"}
-                                  }, {
-                                    "kind": "Field",
-                                    "name": {"kind": "Name", "value": "author"},
-                                    "selectionSet": {
-                                      "kind": "SelectionSet",
-                                      "selections": [{
-                                        "kind": "Field",
-                                        "name": {"kind": "Name", "value": "avatarUrl"}
-                                      }, {
-                                        "kind": "Field",
-                                        "name": {"kind": "Name", "value": "login"}
-                                      }, {"kind": "Field", "name": {"kind": "Name", "value": "url"}}]
-                                    }
-                                  }, {"kind": "Field", "name": {"kind": "Name", "value": "state"}}, {
-                                    "kind": "Field",
-                                    "name": {"kind": "Name", "value": "stateReason"}
-                                  }, {"kind": "Field", "name": {"kind": "Name", "value": "closed"}}, {
-                                    "kind": "Field",
-                                    "name": {"kind": "Name", "value": "closedAt"}
-                                  }, {
-                                    "kind": "Field",
-                                    "name": {"kind": "Name", "value": "updatedAt"}
-                                  }, {"kind": "Field", "name": {"kind": "Name", "value": "publishedAt"}}]
-                                }
-                              }]
-                            }
-                          }]
-                        }
-                      }]
-                    }
-                  }]
-                }
-              }]
-            }
-          }]
-        }
-      }]
-    }
-  }]
-} as unknown as DocumentNode<GetProjectsQuery, GetProjectsQueryVariables>;
+export const GetProjectsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getProjects"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"org"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"projectId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"first"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"after"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"organization"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"login"},"value":{"kind":"Variable","name":{"kind":"Name","value":"org"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"projectsUrl"}},{"kind":"Field","name":{"kind":"Name","value":"projectsResourcePath"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"projectV2"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"number"},"value":{"kind":"Variable","name":{"kind":"Name","value":"projectId"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"items"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"Variable","name":{"kind":"Name","value":"first"}}},{"kind":"Argument","name":{"kind":"Name","value":"after"},"value":{"kind":"Variable","name":{"kind":"Name","value":"after"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"totalCount"}},{"kind":"Field","name":{"kind":"Name","value":"pageInfo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"endCursor"}},{"kind":"Field","name":{"kind":"Name","value":"hasNextPage"}},{"kind":"Field","name":{"kind":"Name","value":"hasPreviousPage"}},{"kind":"Field","name":{"kind":"Name","value":"startCursor"}}]}},{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"cursor"}},{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"fieldValues"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"20"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"cursor"}},{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ProjectV2ItemFieldLabelValue"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"field"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ProjectV2FieldCommon"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"labels"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"10"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"color"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ProjectV2ItemFieldSingleSelectValue"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"field"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ProjectV2SingleSelectField"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ProjectV2ItemFieldNumberValue"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"field"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ProjectV2Field"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"number"}}]}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Issue"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"body"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"bodyHTML"}},{"kind":"Field","name":{"kind":"Name","value":"bodyUrl"}},{"kind":"Field","name":{"kind":"Name","value":"bodyText"}},{"kind":"Field","name":{"kind":"Name","value":"author"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"avatarUrl"}},{"kind":"Field","name":{"kind":"Name","value":"login"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"state"}},{"kind":"Field","name":{"kind":"Name","value":"stateReason"}},{"kind":"Field","name":{"kind":"Name","value":"closed"}},{"kind":"Field","name":{"kind":"Name","value":"closedAt"}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}},{"kind":"Field","name":{"kind":"Name","value":"publishedAt"}}]}}]}}]}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetProjectsQuery, GetProjectsQueryVariables>;
