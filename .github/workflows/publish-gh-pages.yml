@@ -20,7 +20,6 @@ permissions:
 env:
   GITHUB_ORG: ${{ secrets.GITHUB_ORG }}
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
-  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
 # Allow one concurrent deployment
 concurrency:
@@ -51,14 +50,22 @@ jobs:
         with:
           node-version: 16
       - run: yarn --immutable
-      - run: yarn start
+      - name: Generate token
+        id: generate_token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.ROADMAP_APP_ID }}
+          private_key: ${{ secrets.ROADMAP_APP_PRIVATE_KEY }}
+      - name: Get project data
+        env:
+          ACCESS_TOKEN: ${{ steps.generate_token.outputs.token }}
+        run: yarn start
       - run: ls -lsa dist
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
           path: dist
       - name: Deploy to GitHub Pages
         id: deployment
