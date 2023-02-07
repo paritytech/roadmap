@@ -1,5 +1,8 @@
 # ParityTech Roadmap
 
+[![GitHub Issue Sync](https://github.com/paritytech/roadmap/actions/workflows/github-issue-sync.yml/badge.svg)](https://github.com/paritytech/roadmap/actions/workflows/github-issue-sync.yml)
+
+
 GitHub Action + Octokit application, which generates `roadmap.json` from the GH Project and deploys this to https://paritytech.github.io/roadmap/roadmap.json every 9:00 and 21:00 each day
 The authentication to Octokit on production is done through the GitHub action, where we generate token from GitHub App.
 In order to test it locally - generate [personal access token](https://github.com/settings/personal-access-tokens/new) 
