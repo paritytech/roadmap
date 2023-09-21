@@ -13,7 +13,7 @@
     "@graphql-codegen/typescript": "^2.8.1",
     "@graphql-codegen/introspection": "^2.2.1",
     "dotenv": "^16.0.3",
-    "graphql": "^16.6.0",
+    "graphql": "^16.8.1",
     "graphql-request": "^5.0.0",
     "octokit": "^2.0.10",
     "ts-node": "^10.9.1",
